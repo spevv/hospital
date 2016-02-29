@@ -19,7 +19,6 @@ use juniq\helper\Time;
  */
 class Schedule extends \yii\db\ActiveRecord
 {
-   // protected $start_at;
     /**
      * @inheritdoc
      */
@@ -56,8 +55,9 @@ class Schedule extends \yii\db\ActiveRecord
 
 
     /**
-     *
-     *  validation doctor free time
+     * validation doctor free time
+     * @param string $attribute start_at and finish_at
+     * @return true|false
      */
     public function validateTime($attribute, $attribute2)
     {
@@ -97,7 +97,7 @@ class Schedule extends \yii\db\ActiveRecord
     }
 
     /**
-     * User info
+     * Patient info
      * @return \yii\db\ActiveQuery
      */
     public function getPatient()
@@ -106,7 +106,7 @@ class Schedule extends \yii\db\ActiveRecord
     }
 
     /**
-     * User info
+     * Doctor info
      * @return \yii\db\ActiveQuery
      */
     public function getDoctor()
@@ -115,6 +115,7 @@ class Schedule extends \yii\db\ActiveRecord
     }
 
     /**
+     * calculation of working time
      * $models - Schedule model
      * @return 0|string
      */
@@ -125,7 +126,10 @@ class Schedule extends \yii\db\ActiveRecord
             $allTime = 0;
             foreach($models as $model)
             {
-                $allTime += Yii::$app->formatter->asTimestamp($model->finish_at) - Yii::$app->formatter->asTimestamp($model->start_at);
+                if($model->visit == 1)
+                {
+                    $allTime += Yii::$app->formatter->asTimestamp($model->finish_at) - Yii::$app->formatter->asTimestamp($model->start_at);
+                }
             }
             return Time::formatDuration($allTime);
         }

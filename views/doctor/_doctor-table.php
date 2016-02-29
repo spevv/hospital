@@ -5,11 +5,11 @@ use yii\helpers\Url;
 use yii\grid\GridView;
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ScheduletSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-//var_dump($dataProvider->models);
 ?>
 <div class="schedule-index">
 
@@ -50,7 +50,7 @@ use kartik\select2\Select2;
                         'startView' => 2,
                     ]
                 ]),
-                'footer' =>'Load time: '.$searchModel->getLoadTime($dataProvider->models),
+                'footer' =>'Work time: '.$searchModel->getLoadTime($dataProvider->models),
             ],
             [
                 'attribute' => 'finish_at',

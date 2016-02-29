@@ -1,13 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\grid\GridView;
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Doctor */
+/* @var $searchModel app\models\ScheduletSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = $searchModel->doctor->user->fullname;
 $this->params['breadcrumbs'][] = $this->title;

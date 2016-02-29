@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Doctor - '.$user->fullname;

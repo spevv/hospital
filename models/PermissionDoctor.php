@@ -54,7 +54,7 @@ class PermissionDoctor extends \yii\db\ActiveRecord
     }
 
     /**
-     * get all patients by doctor
+     * get all permission by doctor
      * @param integer $id doctor id
      * @return array
      */
@@ -64,9 +64,9 @@ class PermissionDoctor extends \yii\db\ActiveRecord
     }
 
     /**
-     * get all patients by doctor
-     * @param integer $id doctor id
-     * @return array
+     * check doctor permission
+     * @param integer $destinationId, $ownerId
+     * @return true|false
      */
     public static function canDoctorPermisiion($destinationId, $ownerId)
     {

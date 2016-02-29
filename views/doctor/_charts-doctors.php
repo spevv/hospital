@@ -2,9 +2,6 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $form yii\widgets\ActiveForm */
-
 if(!empty($doctors) and is_array($doctors)):
 ?>
     <div class="charts-doctors">

@@ -7,8 +7,6 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-use app\models\Doctor;
-use app\models\Patient;
 /**
  * User model
  *

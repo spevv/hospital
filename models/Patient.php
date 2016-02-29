@@ -3,7 +3,6 @@
 namespace app\models;
 
 use Yii;
-
 use yii\helpers\ArrayHelper;
 
 /**
@@ -74,15 +73,7 @@ class Patient extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Doctor::className(), ['id' => 'doctor_id']);
     }
-    /**
-     * get all patients by doctor id
-     * @param integer $id
-     * @return array
-     */
-    public static function findAllPatientsByDoctor($id)
-    {
-        return ArrayHelper::map(Patient::find()->where(['doctor_id' => $id])->all(), 'id', 'user.fullname');
-    }
+
 
     /**
      * get all patients by doctor id

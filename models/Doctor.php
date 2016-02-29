@@ -64,8 +64,7 @@ class Doctor extends \yii\db\ActiveRecord
     }
 
     /**
-     * get all doctors
-     * @param integer $id
+     * get all doctors as array
      * @return array
      */
     public static function getAllDoctorsAsArray()
@@ -86,7 +85,6 @@ class Doctor extends \yii\db\ActiveRecord
         asort($doctors);
         return $doctors;
     }
-
 
 
     /**

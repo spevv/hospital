@@ -15,8 +15,6 @@ use app\models\SignupForm;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use app\models\Doctor;
-use yii\helpers\ArrayHelper;
-
 use app\models\User;
 use app\models\Schedule;
 use app\models\ScheduletSearch;
